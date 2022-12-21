@@ -1,0 +1,17 @@
+{
+    "packages": [
+        {
+            "type": "angular-package",
+            "name": "n-dynamic-renderer",
+            "version": "1.0.1",
+            "nModule": {
+                "importStatement": "import {NDynamicRendererModule} from 'n-dynamic-renderer'",
+                "imports": [
+                    "NDynamicRendererModule.forRoot()"
+                ],
+                "name": "n-dynamic-renderer",
+                "version": "1.0.1"
+            }
+        }
+    ]
+}

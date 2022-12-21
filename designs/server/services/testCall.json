@@ -1,0 +1,390 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "type": "tab",
+        "createdDate": "2022-12-20T14:41:04.490Z",
+        "label": "testCall",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "testCall",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_osNiy6MlgEgbhkLu",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/schemas/:journey",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "sd_bk2tNtfvUhCKmQkX"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "testCall",
+        "functionName": "sd_osNiy6MlgEgbhkLu"
+    },
+    {
+        "id": "sd_bk2tNtfvUhCKmQkX",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.journey = bh.web.req.params.journey;\n",
+        "functionName": "sd_bk2tNtfvUhCKmQkX",
+        "category": "Function",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "sd_Q25GRzSgcsjIA7CN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_Q25GRzSgcsjIA7CN",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "journey",
+        "propertyType": "bh",
+        "propertyGv": "bh.journey",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "channel_1",
+                "vt": "str",
+                "gv": "\"channel_1\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_Q25GRzSgcsjIA7CN",
+        "category": "Function",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "sd_KQUKrHJMqfFCe3GN"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_DrCw4hiXaLjjAPy8",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "schema",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.schema",
+            "send": "bh.schema"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_DrCw4hiXaLjjAPy8",
+        "category": "HTTP",
+        "x": 545,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_KQUKrHJMqfFCe3GN",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.schema = {\n    $id: \"https://example.com/object1666938433.json\",\n    title: \"Generated schema for Root\",\n    type: \"object\",\n    properties: {\n      case: {\n        type: \"object\",\n        properties: {\n          basic: {\n              type: 'object',\n              properties: {        basicDetails: {\n                  type: \"object\",\n                  properties: {\n                    residentStatus: {\n                      type: \"string\",\n                    },\n                    stateOfResidence: {\n                      type: \"string\",\n                    },\n                    fullName: {\n                      type: \"string\",\n                    },\n                    mobileNumber: {\n                      type: \"string\",\n                      minLength: 10,\n                      maxLength: 10,\n                      pattern: \"^[0-9]*$\",\n                    },\n                    email: {\n                      type: \"string\",\n                      // require '@' && require '.'\n                    },\n                    dob: {\n                      type: \"string\",\n                    },\n                    gender: {\n                      type: \"string\",\n                    },\n                    panCard: {\n                      type: \"string\",\n                    },\n                    education: {\n                      type: \"string\",\n                    },\n                    occupation: {\n                      type: \"string\",\n                    },\n                    annualIncome: {\n                      type: 'number',\n                    },\n                    smokerStatus: {\n                      type: \"string\",\n                    },\n                  },\n                }\n              }\n          },\n          quote: {\n            type: \"object\",\n            properties: { \n              quoteDetails: {\n                  type: 'object',\n                  properties: {\n                      planOptions: {\n                          type: \"radio\",\n                        },\n                        sumAssured: {\n                          type: 'number',\n                        },\n                        term: {\n                          type: \"string\",\n                        },\n                        ppt: {\n                          type: \"string\",\n                        },\n                        frequency: {\n                          type: \"string\",\n                        },\n                        addOns: {\n                          type: \"string\",\n                        },\n                        riders: {\n                          type: \"string\",\n                        },\n                  }\n              }\n            },\n          },\n          personal: {\n            type: \"object\",\n            properties: {\n              personalDetails: {\n                type: \"object\",\n                properties: {\n                  height: {\n                    type: 'number',\n                  },\n                  weight: {\n                    type: 'number',\n                  },\n                  maritalStatus: {\n                    type: \"string\",\n                  },\n                  maidenName: {\n                    type: \"string\",\n                  },\n                  wifesName: {\n                    type: \"string\",\n                  },\n                },\n              },\n              occupationDetails: {\n                type: \"object\",\n                properties: {\n                  industryType: {\n                    type: \"string\",\n                  },\n                  employerName: {\n                    type: \"string\",\n                  },\n                  industry: {\n                    type: \"string\",\n                  },\n                  designation: {\n                    type: \"string\",\n                  },\n                  workplaceCountry: {\n                    type: \"string\",\n                  },\n                  pinCode: {\n                    type: 'number',\n                  },\n                  natureOfWork: {\n                    type: \"string\",\n                  },\n                  harmfulExposure: {\n                    type: \"string\",\n                  },\n                  sourceOfFund: {\n                    type: \"string\",\n                  },\n                },\n              },\n              addressDetails: {\n                type: \"object\",\n                properties: {\n                  house: {\n                    type: \"number\",\n                  },\n                  street: {\n                    type: \"string\",\n                  },\n                  landmark: {\n                    type: \"string\",\n                  },\n                  pinCode: {\n                    type: \"string\",\n                  },\n                },\n              },\n            },\n          },\n          declaration: {\n              type: \"object\",\n              properties: {\n                  declarations: {\n                  type: \"object\",\n                  properties: {\n                      lifestyle: {\n                          type: \"string\" },\n                      previousPolicies: {\n                          type: \"string\" },\n                      medical: {\n                          type: \"string\" },\n                      others: {\n                          type: \"string\" }\n                      }\n                  }\n                }\n          },\n          documents: {\n              type: \"object\",\n              properties: {}\n          },\n          payment: {\n              type: \"object\",\n              properties: {\n                  neftDetails: {\n                  type: \"object\",\n                  properties: {\n                      holderName: {\n                          type: \"string\" },\n                      accountNumber: {\n                          type: 'number' },\n                      ifscCode: {\n                          type: 'number' },\n                      accountType: {\n                          type: \"string\" }\n                      }\n                  }\n                }\n          },\n            },\n        },\n      },\n  };\n  ",
+        "functionName": "sd_KQUKrHJMqfFCe3GN",
+        "category": "Function",
+        "x": 425,
+        "y": 120,
+        "wires": [
+            [
+                "sd_DrCw4hiXaLjjAPy8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_eGSOcD107CYIIVys",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/views/:journey",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "sd_3lJ5WE8ZqOA5gM9x"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "testCall",
+        "functionName": "sd_eGSOcD107CYIIVys"
+    },
+    {
+        "id": "sd_3lJ5WE8ZqOA5gM9x",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.journey = bh.web.req.params.journey;",
+        "functionName": "sd_3lJ5WE8ZqOA5gM9x",
+        "category": "Function",
+        "x": 225,
+        "y": 280,
+        "wires": [
+            [
+                "sd_ZHxHqa1dhRdGn5Xm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_ZHxHqa1dhRdGn5Xm",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "journey",
+        "propertyType": "bh",
+        "propertyGv": "bh.journey",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "channel_1",
+                "vt": "str",
+                "gv": "\"channel_1\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_ZHxHqa1dhRdGn5Xm",
+        "category": "Function",
+        "x": 345,
+        "y": 280,
+        "wires": [
+            [
+                "sd_Qg1DZfVVo4kMTw2E"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_snQM6aM9EZMBrNVX",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "schema.properties.case.properties",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.schema.properties.case.properties",
+            "send": "bh.schema.properties.case.properties"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_snQM6aM9EZMBrNVX",
+        "category": "HTTP",
+        "x": 550,
+        "y": 240,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    },
+    {
+        "id": "sd_Qg1DZfVVo4kMTw2E",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_kKjofZaFmibJfDx7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.schema = {\n    $id: \"https://example.com/object1666938433.json\",\n    title: \"Generated schema for Root\",\n    type: \"object\",\n    properties: {\n      case: {\n        type: \"object\",\n        properties: {\n          basic: {\n              type: 'object',\n              properties: {        basicDetails: {\n                  type: \"object\",\n                  properties: {\n                    residentStatus: {\n                      type: \"string\",\n                    },\n                    stateOfResidence: {\n                      type: \"string\",\n                    },\n                    fullName: {\n                      type: \"string\",\n                    },\n                    mobileNumber: {\n                      type: \"string\",\n                      minLength: 10,\n                      maxLength: 10,\n                      pattern: \"^[0-9]*$\",\n                    },\n                    email: {\n                      type: \"string\",\n                      // require '@' && require '.'\n                    },\n                    dob: {\n                      type: \"string\",\n                    },\n                    gender: {\n                      type: \"string\",\n                    },\n                    panCard: {\n                      type: \"string\",\n                    },\n                    education: {\n                      type: \"string\",\n                    },\n                    occupation: {\n                      type: \"string\",\n                    },\n                    annualIncome: {\n                      type: 'number',\n                    },\n                    smokerStatus: {\n                      type: \"string\",\n                    },\n                  },\n                }\n              }\n          },\n          quote: {\n            type: \"object\",\n            properties: { \n              quoteDetails: {\n                  type: 'object',\n                  properties: {\n                      planOptions: {\n                          type: \"radio\",\n                        },\n                        sumAssured: {\n                          type: 'number',\n                        },\n                        term: {\n                          type: \"string\",\n                        },\n                        ppt: {\n                          type: \"string\",\n                        },\n                        frequency: {\n                          type: \"string\",\n                        },\n                        addOns: {\n                          type: \"string\",\n                        },\n                        riders: {\n                          type: \"string\",\n                        },\n                  }\n              }\n            },\n          },\n          personal: {\n            type: \"object\",\n            properties: {\n              personalDetails: {\n                type: \"object\",\n                properties: {\n                  height: {\n                    type: 'number',\n                  },\n                  weight: {\n                    type: 'number',\n                  },\n                  maritalStatus: {\n                    type: \"string\",\n                  },\n                  maidenName: {\n                    type: \"string\",\n                  },\n                  wifesName: {\n                    type: \"string\",\n                  },\n                },\n              },\n              occupationDetails: {\n                type: \"object\",\n                properties: {\n                  industryType: {\n                    type: \"string\",\n                  },\n                  employerName: {\n                    type: \"string\",\n                  },\n                  industry: {\n                    type: \"string\",\n                  },\n                  designation: {\n                    type: \"string\",\n                  },\n                  workplaceCountry: {\n                    type: \"string\",\n                  },\n                  pinCode: {\n                    type: 'number',\n                  },\n                  natureOfWork: {\n                    type: \"string\",\n                  },\n                  harmfulExposure: {\n                    type: \"string\",\n                  },\n                  sourceOfFund: {\n                    type: \"string\",\n                  },\n                },\n              },\n              addressDetails: {\n                type: \"object\",\n                properties: {\n                  house: {\n                    type: \"number\",\n                  },\n                  street: {\n                    type: \"string\",\n                  },\n                  landmark: {\n                    type: \"string\",\n                  },\n                  pinCode: {\n                    type: \"string\",\n                  },\n                },\n              },\n            },\n          },\n          declaration: {\n              type: \"object\",\n              properties: {\n                  declarations: {\n                  type: \"object\",\n                  properties: {\n                      lifestyle: {\n                          type: \"string\" },\n                      previousPolicies: {\n                          type: \"string\" },\n                      medical: {\n                          type: \"string\" },\n                      others: {\n                          type: \"string\" }\n                      }\n                  }\n                }\n          },\n          documents: {\n              type: \"object\",\n              properties: {}\n          },\n          payment: {\n              type: \"object\",\n              properties: {\n                  neftDetails: {\n                  type: \"object\",\n                  properties: {\n                      holderName: {\n                          type: \"string\" },\n                      accountNumber: {\n                          type: 'number' },\n                      ifscCode: {\n                          type: 'number' },\n                      accountType: {\n                          type: \"string\" }\n                      }\n                  }\n                }\n          },\n            },\n        },\n      },\n  };\n  ",
+        "functionName": "sd_Qg1DZfVVo4kMTw2E",
+        "category": "Function",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "sd_snQM6aM9EZMBrNVX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "testCall",
+        "generated": true
+    }
+]

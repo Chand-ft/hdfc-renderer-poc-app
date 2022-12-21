@@ -1,0 +1,96 @@
+[
+    {
+        "id": "sd_xLh7RrKeHHoNEi04",
+        "type": "tab",
+        "createdDate": "2022-12-20T13:09:30.379Z",
+        "label": "home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_nt1YQ6lKj0Sc8fvg",
+        "type": "OnInit",
+        "z": "sd_xLh7RrKeHHoNEi04",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_nt1YQ6lKj0Sc8fvg",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_n8mArbC24WYIXHr9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_n8mArbC24WYIXHr9",
+        "type": "PageVariables",
+        "z": "sd_xLh7RrKeHHoNEi04",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_n8mArbC24WYIXHr9",
+        "category": "Function",
+        "x": 205,
+        "y": 60,
+        "wires": [
+            [
+                "sd_yweFL9CnvEBQtM9T"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yweFL9CnvEBQtM9T",
+        "type": "UseDependency",
+        "z": "sd_xLh7RrKeHHoNEi04",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "dynamicrendererService",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "dynamicrenderer"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "../services/dynamicrenderer/dynamicrenderer.service",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_yweFL9CnvEBQtM9T",
+        "category": "Function",
+        "x": 325,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    }
+]

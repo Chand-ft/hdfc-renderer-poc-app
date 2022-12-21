@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "homeComponent",
+            "children": [
+                {
+                    "path": "input",
+                    "component": "inputComponent"
+                },
+                {
+                    "path": "datepicker",
+                    "component": "datepickerComponent"
+                },
+                {
+                    "component": "dropdownComponent",
+                    "path": "dropdown"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "/home",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

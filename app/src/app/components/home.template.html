@@ -1,0 +1,5 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div>
+    <n-dynamic-renderer [view]="page.view" [(model)]="page.model" [schema]="page.schema" (onError)="onError($event)"></n-dynamic-renderer>
+  </div>
+</div>
